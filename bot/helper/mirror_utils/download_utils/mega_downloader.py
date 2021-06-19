@@ -119,7 +119,7 @@ class MegaAppListener(MegaListener):
 
     def cancel_download(self):
         self.is_cancelled = True
-        self.listener.onDownloadError("Download Canceled by user")
+        self.listener.onDownloadError("Download Canceled By User 🥺❗️")
 
 
 class AsyncExecutor:
@@ -144,7 +144,7 @@ class MegaDownloadHelper:
         if MEGA_API_KEY is None:
             raise MegaDownloaderException('Mega API KEY not provided! Cannot mirror Mega links')
         if STOP_DUPLICATE_MEGA or MEGA_LIMIT is not None:
-            msg = sendMessage('Checking Your Link...', listener.bot, listener.update)
+            msg = sendMessage('♻️ Checking Your Link.....', listener.bot, listener.update)
         executor = AsyncExecutor()
         api = MegaApi(MEGA_API_KEY, None, None, 'telegram-mirror-bot')
         global listeners
@@ -177,7 +177,7 @@ class MegaDownloadHelper:
                 smsg, button = gd.drive_list(mname)
             if smsg:
                 deleteMessage(listener.bot, msg)
-                msg1 = "File/Folder is already available in Drive.\nHere are the search results:"
+                msg1 = "File|Folder is already available in Drive 😡\nHere are the search results 🥶👇"
                 sendMarkup(msg1, listener.bot, listener.update, button)
                 return
             else:
