@@ -524,7 +524,7 @@ class GoogleDriveHelper:
                     nxt_page += 1
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
                                  title = 'DVDWORLD™️ Drive Search',
-                                 author_name=',ANonYmoUSFriEND',
+                                 author_name='ANonYmoUSFriEND',
                                  author_url='https://t.me/ANonYmoUS_FriEND',
                                  html_content=content)
         return
