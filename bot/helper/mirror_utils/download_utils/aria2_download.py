@@ -33,8 +33,8 @@ class AriaDownloadHelper(DownloadHelper):
                     gdrive = GoogleDriveHelper(None)
                     smsg, button = gdrive.drive_list(sname)
                 if smsg:
-                    dl.getListener().onDownloadError(f'File/Folder is already available in Drive.\n\n')
-                    sendMarkup("Here are the search results:", dl.getListener().bot, dl.getListener().update, button)
+                    dl.getListener().onDownloadError(f'File|Folder is already available in Drive 😡\n\n')
+                    sendMarkup("Here are the search results 🥶👇", dl.getListener().bot, dl.getListener().update, button)
                     aria2.remove([download])
                     return
 
@@ -47,12 +47,12 @@ class AriaDownloadHelper(DownloadHelper):
                 limitint = int(limit[0])
                 if 'GB' in limit or 'gb' in limit:
                     if size > limitint * 1024**3:
-                        dl.getListener().onDownloadError(f'Torrent/Direct limit is {TORRENT_DIRECT_LIMIT}.\nYour File/Folder size is {get_readable_file_size(size)}')
+                        dl.getListener().onDownloadError(f'Torrent/Direct limit is ➤ {TORRENT_DIRECT_LIMIT}.\nYour File/Folder size is ➤ {get_readable_file_size(size)}')
                         aria2.remove([download])
                         return
                 elif 'TB' in limit or 'tb' in limit:
                     if size > limitint * 1024**4:
-                        dl.getListener().onDownloadError(f'Torrent/Direct limit is {TORRENT_DIRECT_LIMIT}.\nYour File/Folder size is {get_readable_file_size(size)}')
+                        dl.getListener().onDownloadError(f'Torrent/Direct limit is ➤ {TORRENT_DIRECT_LIMIT}.\nYour File/Folder size is ➤ {get_readable_file_size(size)}')
                         aria2.remove([download])
                         return
         update_all_messages()
@@ -78,13 +78,13 @@ class AriaDownloadHelper(DownloadHelper):
     def __onDownloadPause(self, api, gid):
         LOGGER.info(f"onDownloadPause: {gid}")
         dl = getDownloadByGid(gid)
-        dl.getListener().onDownloadError('Download stopped by user!')
+        dl.getListener().onDownloadError('Download Stopped By User 🥺❗️')
 
     @new_thread
     def __onDownloadStopped(self, api, gid):
         LOGGER.info(f"onDownloadStop: {gid}")
         dl = getDownloadByGid(gid)
-        if dl: dl.getListener().onDownloadError('Dead torrent!')
+        if dl: dl.getListener().onDownloadError('Dead Torrent| Magnet 😂❗️')
 
     @new_thread
     def __onDownloadError(self, api, gid):
