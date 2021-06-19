@@ -194,14 +194,17 @@ BotCommand(f'{BotCommands.UnAuthorizeCommand}', 'UnAuthorize a chat [owner only]
 BotCommand(f'{BotCommands.CountCommand}','Count file/folder of Drive link'),
 BotCommand(f'{BotCommands.WatchCommand}','Mirror YT-DL support link'),
 BotCommand(f'{BotCommands.TarWatchCommand}','Mirror Youtube playlist link as tar'),
+BotCommand(f'{BotCommands.MediainfoCommand}', 'Get info about replyed telegram media'),
 BotCommand(f'{BotCommands.CancelMirror}','Cancel a task'),
 BotCommand(f'{BotCommands.CancelAllCommand}','Cancel all tasks [owner only]'),
 BotCommand(f'{BotCommands.DeleteCommand}','Delete file from Drive [owner only]'),
 BotCommand(f'{BotCommands.ListCommand}',' [query] Searches files in Drive'),
 BotCommand(f'{BotCommands.StatusCommand}','Get Mirror Status message'),
+BotCommand(f'{BotCommands.TshelpCommand}', 'Get help for Torrent search module'),
 BotCommand(f'{BotCommands.StatsCommand}','Bot Usage Stats'),
 BotCommand(f'{BotCommands.HelpCommand}','Get Detailed Help'),
 BotCommand(f'{BotCommands.SpeedCommand}','Check Speed of the host'),
+BotCommand(f'{BotCommands.ShellCommand}', 'Run commands in Terminal [owner only]'),
 BotCommand(f'{BotCommands.LogCommand}','Bot Log [owner only]'),
 BotCommand(f'{BotCommands.RestartCommand}','Restart bot [owner only]')]
 
