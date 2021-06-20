@@ -14,7 +14,7 @@ async def mediainfo(client, message):
     if not reply:
         await message.reply_text("Reply to Telegram Media first 😏")
         return
-    process = await message.reply_text("`♻️Processing......`")
+    process = await message.reply_text("`♻️ Processing. . . . .`")
     x_media = None
     available_media = (
         "audio",
@@ -41,7 +41,7 @@ async def mediainfo(client, message):
     if len(output_) != 0:
          out = output_[0]
     body_text = f"""
-<h2>🪅 JSON 🪅</h2>
+<h2>💡 JSON 💡</h2>
 <pre>{x_media}</pre>
 <br>
 
@@ -51,4 +51,4 @@ async def mediainfo(client, message):
     text_ = media_type.split(".")[-1].upper()
     link = post_to_telegraph(media_type, body_text)
     markup = InlineKeyboardMarkup([[InlineKeyboardButton(text=text_, url=link)]])
-    await process.edit_text("🧧  <b>MEDIA INFO</b>  🧧", reply_markup=markup)
+    await process.edit_text("🧧   <b>MEDIA INFO</b>   🧧", reply_markup=markup)
