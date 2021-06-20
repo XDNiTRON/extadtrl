@@ -13,7 +13,7 @@ def cloneNode(update, context):
         link = args[1]
         gd = GoogleDriveHelper()
         if CLONE_LIMIT is not None or STOP_DUPLICATE_CLONE:
-            msg1 = sendMessage(f"♻️ Checking Your Link.....", context.bot, update)
+            msg1 = sendMessage(f"♻️ Checking Your Link. . . . .", context.bot, update)
             res, clonesize, name = gd.clonehelper(link)
             if res != "":
                deleteMessage(context.bot, msg1)
@@ -61,7 +61,7 @@ def cloneNode(update, context):
             else:
                 uname = f'<a href="tg://user?id={update.message.from_user.id}">{update.message.from_user.first_name}</a>'
             if uname is not None:
-                cc = f'\n\n🚨UpLoader: {uname}'
+                cc = f'\n\n🚨UpLoader : {uname}'
             sendMarkup(result + cc, context.bot, update, button)
     else:
         sendMessage('Provide G-Drive Shareable Link to Clone 😏', context.bot, update)
