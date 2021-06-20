@@ -336,8 +336,8 @@ class GoogleDriveHelper:
             if meta.get("mimeType") == self.__G_DRIVE_DIR_MIME_TYPE:
                 dir_id = self.create_directory(meta.get('name'), parent_id)
                 result = self.cloneFolder(meta.get('name'), meta.get('name'), meta.get('id'), dir_id)
-                msg += f'<b>📂FileName: </b><code>{meta.get("name")}</code>\n<b>🧰TotalSize: </b><code>{get_readable_file_size(self.transferred_size)}</code>'
-                msg += f'\n<b>╭─➤ Type: </b><code>Folder</code>'
+                msg += f'<b>📂FileName: </b><code>{meta.get("name")}</code>\n\n<b>🧰TotalSize: </b><code>{get_readable_file_size(self.transferred_size)}</code>'
+                msg += f'\n\n<b>╭─➤ Type: </b><code>Folder</code>'
                 msg += f'\n<b>├─•SubFolders: </b><code>{self.total_folders}</code>'
                 msg += f'\n<b>╰─•Files: </b><code>{self.total_files}</code>'
                 durl = self.__G_DRIVE_DIR_BASE_DOWNLOAD_URL.format(dir_id)
@@ -376,8 +376,8 @@ class GoogleDriveHelper:
                 except:
                     typeee = 'File' 
                 try:
-                    msg += f'\n<b>🧰TotalSize: </b><code>{get_readable_file_size(int(meta.get("size")))}</code>'
-                    msg += f'\n<b>➤ Type: </b><code>{typeee}</code>'
+                    msg += f'\n\n<b>🧰TotalSize: </b><code>{get_readable_file_size(int(meta.get("size")))}</code>'
+                    msg += f'\n\n<b>➤ Type: </b><code>{typeee}</code>'
                 except TypeError:
                     pass
                 if INDEX_URL is not None:
@@ -523,7 +523,7 @@ class GoogleDriveHelper:
                     content += f'<b> | <a href="https://telegra.ph/{self.path[nxt_page]}">NEXT ❯❯❯❯❯</a></b>'
                     nxt_page += 1
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
-                                 title = 'DVDWORLD™️ Drive Search',
+                                 title = 'DVDWORLD Drive Search',
                                  author_name='ANonYmoUSFriEND',
                                  author_url='https://t.me/ANonYmoUS_FriEND',
                                  html_content=content)
@@ -573,7 +573,7 @@ class GoogleDriveHelper:
                     # Excluded index link as indexes cant download or open these shortcuts
                 else:
                     furl = f"https://drive.google.com/uc?id={file.get('id')}&export=download"
-                    msg += f"🎞️ <code>{file.get('name')}<br>({get_readable_file_size(int(file.get('size')))})🎟️</code><br>"
+                    msg += f"📽 <code>{file.get('name')}<br>({get_readable_file_size(int(file.get('size')))})🎟️</code><br>"
                     if SHORTENER is not None and SHORTENER_API is not None:
                         sfurl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={furl}&format=text').text
                         msg += f"<b><a href={sfurl}>🔰 Drive Link</a></b>"
@@ -608,7 +608,7 @@ class GoogleDriveHelper:
 
             for content in self.telegraph_content :
                 self.path.append(Telegraph(access_token=telegraph_token).create_page(
-                                                        title = 'DVDWORLD™️ Drive Search',
+                                                        title = 'DVDWORLD Drive Search',
                                                         author_name='ANonYmoUSFriEND',
                                                         author_url='https://t.me/ANonYmoUS_FriEND',
                                                         html_content=content
@@ -644,8 +644,8 @@ class GoogleDriveHelper:
             if drive_file['mimeType'] == self.__G_DRIVE_DIR_MIME_TYPE:
                 self.gDrive_directory(**drive_file)
                 msg += f'<b>📂FileName: </b><code>{name}</code>'
-                msg += f'\n<b>🧰TotalSize: </b><code>{get_readable_file_size(self.total_bytes)}</code>'
-                msg += f'\n<b>╭─➤Type: </b><code>Folder</code>'
+                msg += f'\n\n<b>🧰TotalSize: </b><code>{get_readable_file_size(self.total_bytes)}</code>'
+                msg += f'\n\n<b>╭─➤Type: </b><code>Folder</code>'
                 msg += f'\n<b>├─•SubFolders: </b><code>{self.total_folders}</code>'
                 msg += f'\n<b>╰─•Files: </b><code>{self.total_files}</code>'
             else:
@@ -657,8 +657,8 @@ class GoogleDriveHelper:
                 try:
                     self.total_files += 1
                     self.gDrive_file(**drive_file)
-                    msg += f'\n<b>🧰TotalSize: </b><code>{get_readable_file_size(self.total_bytes)}</code>'
-                    msg += f'\n<b>╭─➤Type: </b><code>{typee}</code>'
+                    msg += f'\n\n<b>🧰TotalSize: </b><code>{get_readable_file_size(self.total_bytes)}</code>'
+                    msg += f'\n\n<b>╭─➤Type: </b><code>{typee}</code>'
                     msg += f'\n<b>╰─•Files: </b><code>{self.total_files}</code>'
                 except TypeError:
                     pass
