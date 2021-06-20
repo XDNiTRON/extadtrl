@@ -17,7 +17,7 @@ def cancel_mirror(update, context):
         gid = args[1]
         dl = getDownloadByGid(gid)
         if not dl:
-            sendMessage(f"🚧 GID: <code>{gid}</code> not found 🙄", context.bot, update)
+            sendMessage(f"🚧 GID: <code>{gid}</code> NOT FOUND 🙄", context.bot, update)
             return
         with download_dict_lock:
             keys = list(download_dict.keys())
@@ -50,7 +50,7 @@ def cancel_mirror(update, context):
             sleep(1)  # Wait a Second For Aria2 To free Resources.
             clean_download(f'{DOWNLOAD_DIR}{mirror_message.message_id}/')
     except:
-        psn = f"Please reply to your mirror msg which was used to start the download or <code>/{BotCommands.CancelMirror} GID</code> to cancel 😏"
+        psn = f"Reply to your mirror msg which was used to start the download or <code>/{BotCommands.CancelMirror} GID</code> to cancel 😏"
         sendMessage(psn, context.bot, update)
         return
 
@@ -64,7 +64,7 @@ def cancel_all(update, context):
                 dlDetails.download().cancel_download()
                 count += 1
     delete_all_messages()
-    sendMessage(f'Cancelled {count} downloads ☹️❗️', context.bot, update)
+    sendMessage(f'Cancelled {count} downloads 👻❗️', context.bot, update)
 
 
 cancel_mirror_handler = CommandHandler(BotCommands.CancelMirror, cancel_mirror,
