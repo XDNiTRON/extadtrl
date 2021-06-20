@@ -119,7 +119,7 @@ def bot_help(update, context):
 
 /{BotCommands.ListCommand} [search term]: Searches the search term in the Google Drive, if found replies with the link
 
-/{BotCommands.StatsCommand}: Show Stats of the machine the bot is hosted on
+/{BotCommands.StatsCommand}: Show Statics of the machine the bot is hosted on
 
 /{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
 
@@ -167,7 +167,7 @@ def bot_help(update, context):
 
 /{BotCommands.ListCommand} [search term]: Searches the search term in the Google Drive, if found replies with the link
 
-/{BotCommands.StatsCommand}: Show Stats of the machine the bot is hosted on
+/{BotCommands.StatsCommand}: Show Statics of the machine the bot is hosted on
 
 /{BotCommands.SpeedCommand}: Check Internet Speed of the Host
 
@@ -196,7 +196,7 @@ BotCommand(f'{BotCommands.CancelAllCommand}','Cancel all tasks [owner only]'),
 BotCommand(f'{BotCommands.DeleteCommand}','Delete file from Drive [owner only]'),
 BotCommand(f'{BotCommands.ListCommand}',' [query] Searches files in Drive'),
 BotCommand(f'{BotCommands.StatusCommand}','Get Mirror Status message'),
-BotCommand(f'{BotCommands.StatsCommand}','Bot Usage Stats'),
+BotCommand(f'{BotCommands.StatsCommand}','Bot Usage Statics'),
 BotCommand(f'{BotCommands.HelpCommand}','Get Detailed Help'),
 BotCommand(f'{BotCommands.SpeedCommand}','Check Speed of the host'),
 BotCommand(f'{BotCommands.LogCommand}','Bot Log [owner only]'),
