@@ -17,12 +17,12 @@ def speedtest(update, context):
     result = test.results.dict()
     path = (result['share'])
     string_speed = f'''
-<b>╭──📟SERVER USiNG ENGiNE Aria2⚡️</b>
+<b>╭━┫📟SERVER USiNG ENGiNE Aria2⚡️</b>
 <b>├📡Name:</b> <code>{result['server']['name']}</code>
 <b>├🕹Country:</b> <code>{result['server']['country']}, {result['server']['cc']}</code>
 <b>╰💶Sponsor:</b> <code>{result['server']['sponsor']}</code>
     
-<b>╭────🚀SPEED TEST RESULT🚀</b>
+<b>╭──━┫🚀SPEED TEST RESULT🚀</b>
 <b>├🔺Upload:</b> <code>{speed_convert(result['upload'] / 8)}</code>
 <b>├🔻Download:</b>  <code>{speed_convert(result['download'] / 8)}</code>
 <b>├🖲Ping:</b> <code>{result['ping']} ms</code>
