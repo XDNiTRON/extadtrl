@@ -177,7 +177,7 @@ class MegaDownloadHelper:
                 smsg, button = gd.drive_list(mname)
             if smsg:
                 deleteMessage(listener.bot, msg)
-                msg1 = "File|Folder is already available in Drive 😡\nHere are the search results 🥶👇"
+                msg1 = "File | Folder is already available in Drive 😡\nHere are the search results 🥶👇"
                 sendMarkup(msg1, listener.bot, listener.update, button)
                 return
             else:
@@ -189,7 +189,7 @@ class MegaDownloadHelper:
             limit = MEGA_LIMIT
             limit = limit.split(' ', maxsplit=1)
             limitint = int(limit[0])
-            msg3 = f'Failed, Mega limit is {MEGA_LIMIT}.\nYour File/Folder size is {get_readable_file_size(api.getSize(node))}.'
+            msg3 = f'Failed, Mega limit is ➤{MEGA_LIMIT}.\nYour File/Folder size is ➤{get_readable_file_size(api.getSize(node))}.'
             if 'GB' in limit or 'gb' in limit:
                 if api.getSize(node) > limitint * 1024**3:
                     deleteMessage(listener.bot, msg)
