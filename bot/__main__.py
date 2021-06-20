@@ -35,20 +35,20 @@ def stats(update, context):
     cpuUsage = psutil.cpu_percent(interval=0.5)
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage('/').percent
-    stats = f'<b>╭───┃🎖BOT  STATiSTiCS🎖┃</b>\n' \
+    stats = f'<b>╭━─━┫🎖BOT  STATiSTiCS🎖┃</b>\n' \
             f'<b>│</b>\n' \
             f'<b>├⏱BotUptime:</b> {currentTime}\n' \
             f'<b>╰⏰StartTime:</b> {current}\n\n' \
-            f'<b>╭─🧰Total DiskSpace:</b> {total}\n' \
-            f'<b>├─📮Used:</b> {used}\n' \
-            f'<b>╰─🏮Free:</b> {free}\n\n' \
-            f'<b>╭───┃🕹 DATA USAGE 🕹┃</b>\n<b>├─🔺Upload:</b> {sent}\n' \
-            f'<b>├─🔻Download:</b> {recv}\n' \
-            f'<b>├─📟CPU:</b> {cpuUsage}%\n' \
-            f'<b>├─💾RAM:</b> {memory}%\n' \
-            f'<b>├─💿DISK:</b> {disk}%\n' \
+            f'<b>╭━━🧰Total Disk Space:</b> {total}\n' \
+            f'<b>├━📮Used:</b> {used}\n' \
+            f'<b>╰━🏮Free:</b> {free}\n\n' \
+            f'<b>╭━─━┫🕹 DATA USAGE 🕹┃</b>\n<b>├━🔺Upload:</b> {sent}\n' \
+            f'<b>├━🔻Download:</b> {recv}\n' \
+            f'<b>├━📟CPU:</b> {cpuUsage}%\n' \
+            f'<b>├━💾RAM:</b> {memory}%\n' \
+            f'<b>├━💿DISK:</b> {disk}%\n' \
             f'<b>│</b>\n' \
-            f'<b>╰─┃🏆@ANonYmoUS_FriEND🏆┃</b>'
+            f'<b>╰━┫🏆@ANonYmoUS_FriEND🏆┃</b>'
     update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
 
 
@@ -65,11 +65,11 @@ Type /{BotCommands.HelpCommand} to get a list of available commands 🤙
     uptime = get_readable_time((time.time() - botStartTime))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         if update.message.chat.type == "private" :
-            sendMessage(f"Hey I'm Alive 🙂\n🦾 Since: <code>{uptime}</code>", context.bot, update)
+            sendMessage(f"Hey I'm Alive 🙂\nBy @ANonYmoUS_FriEND\n🦾 Since: <code>{uptime}</code>", context.bot, update)
         else :
             update.effective_message.reply_photo(IMAGE_URL, start_string, parse_mode=ParseMode.MARKDOWN, reply_markup=reply_markup)
     else :
-        sendMessage(f"Oops❗️ not a Authorized user 😐", context.bot, update)
+        sendMessage(f"Oops❗️ You are not Authorized to use me 😐", context.bot, update)
 
 
 def restart(update, context):
