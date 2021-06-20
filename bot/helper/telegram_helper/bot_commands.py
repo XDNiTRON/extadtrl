@@ -23,7 +23,7 @@ class _BotCommands:
         self.CountCommand = 'count'
         self.WatchCommand = 'ytdl'
         self.TarWatchCommand = 'tarytdl'
-        self.DeleteCommand = 'del'
+        self.DeleteCommand = 'delete'
         self.UsageCommand = 'usage'
 
 BotCommands = _BotCommands()
