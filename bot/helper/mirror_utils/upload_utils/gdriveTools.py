@@ -338,8 +338,8 @@ class GoogleDriveHelper:
                 result = self.cloneFolder(meta.get('name'), meta.get('name'), meta.get('id'), dir_id)
                 msg += f'<b>📂FileName: </b><code>{meta.get("name")}</code>\n\n<b>🧰TotalSize: </b><code>{get_readable_file_size(self.transferred_size)}</code>'
                 msg += f'\n\n<b>╭━➤ Type: </b><code>Folder</code>'
-                msg += f'\n<b>├━•SubFolders: </b><code>{self.total_folders}</code>'
-                msg += f'\n<b>╰━•Files: </b><code>{self.total_files}</code>'
+                msg += f'\n<b>├━➤SubFolders: </b><code>{self.total_folders}</code>'
+                msg += f'\n<b>╰━➤Files: </b><code>{self.total_files}</code>'
                 durl = self.__G_DRIVE_DIR_BASE_DOWNLOAD_URL.format(dir_id)
                 buttons = button_build.ButtonMaker()
                 if SHORTENER is not None and SHORTENER_API is not None:
@@ -377,7 +377,7 @@ class GoogleDriveHelper:
                     typeee = 'File' 
                 try:
                     msg += f'\n\n<b>🧰TotalSize: </b><code>{get_readable_file_size(int(meta.get("size")))}</code>'
-                    msg += f'\n\n<b>•━➤ Type: </b><code>{typeee}</code>'
+                    msg += f'\n\n<b>➤ Type: </b><code>{typeee}</code>'
                 except TypeError:
                     pass
                 if INDEX_URL is not None:
@@ -646,8 +646,8 @@ class GoogleDriveHelper:
                 msg += f'<b>📂FileName: </b><code>{name}</code>'
                 msg += f'\n\n<b>🧰TotalSize: </b><code>{get_readable_file_size(self.total_bytes)}</code>'
                 msg += f'\n\n<b>╭━➤Type: </b><code>Folder</code>'
-                msg += f'\n<b>├━•SubFolders: </b><code>{self.total_folders}</code>'
-                msg += f'\n<b>╰━•Files: </b><code>{self.total_files}</code>'
+                msg += f'\n<b>├━➤SubFolders: </b><code>{self.total_folders}</code>'
+                msg += f'\n<b>╰━➤Files: </b><code>{self.total_files}</code>'
             else:
                 msg += f'<b>📂FileName: </b><code>{name}</code>'
                 try:
@@ -659,7 +659,7 @@ class GoogleDriveHelper:
                     self.gDrive_file(**drive_file)
                     msg += f'\n\n<b>🧰TotalSize: </b><code>{get_readable_file_size(self.total_bytes)}</code>'
                     msg += f'\n\n<b>╭━➤Type: </b><code>{typee}</code>'
-                    msg += f'\n<b>╰━•Files: </b><code>{self.total_files}</code>'
+                    msg += f'\n<b>╰━➤Files: </b><code>{self.total_files}</code>'
                 except TypeError:
                     pass
         except Exception as err:
