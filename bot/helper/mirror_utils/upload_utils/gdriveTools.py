@@ -344,17 +344,17 @@ class GoogleDriveHelper:
                 buttons = button_build.ButtonMaker()
                 if SHORTENER is not None and SHORTENER_API is not None:
                     surl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={durl}&format=text').text
-                    buttons.buildbutton("🔰 DriveLink 🔰", surl)
+                    buttons.buildbutton("🔰 G-DriveLink 🔰", surl)
                 else:
-                    buttons.buildbutton("🔰 DriveLink 🔰", durl)
+                    buttons.buildbutton("🔰 G-DriveLink 🔰", durl)
                 if INDEX_URL is not None:
                     url_path = requests.utils.quote(f'{meta.get("name")}')
                     url = f'{INDEX_URL}/{url_path}/'
                     if SHORTENER is not None and SHORTENER_API is not None:
                         siurl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={url}&format=text').text
-                        buttons.buildbutton("🏓 IndexLink 🏓", siurl)
+                        buttons.buildbutton("🏓 Index Link 🏓", siurl)
                     else:
-                        buttons.buildbutton("🏓 IndexLink 🏓", url)
+                        buttons.buildbutton("🏓 Index Link 🏓", url)
                 if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
                     buttons.buildbutton(f"{BUTTON_FOUR_NAME}", f"{BUTTON_FOUR_URL}")
                 if BUTTON_FIVE_NAME is not None and BUTTON_FIVE_URL is not None:
@@ -368,9 +368,9 @@ class GoogleDriveHelper:
                 buttons = button_build.ButtonMaker()
                 if SHORTENER is not None and SHORTENER_API is not None:
                     surl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={durl}&format=text').text
-                    buttons.buildbutton("🔰 DriveLink 🔰", surl)
+                    buttons.buildbutton("🔰 G-DriveLink 🔰", surl)
                 else:
-                    buttons.buildbutton("🔰 DriveLink 🔰", durl)
+                    buttons.buildbutton("🔰 G-DriveLink 🔰", durl)
                 try:
                     typeee = file.get('mimeType')
                 except:
@@ -387,13 +387,13 @@ class GoogleDriveHelper:
                     if SHORTENER is not None and SHORTENER_API is not None:
                         siurl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={url}&format=text').text
                         siurls = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={urls}&format=text').text
-                        buttons.buildbutton("🏓 IndexLink 🏓", siurl)
+                        buttons.buildbutton("🏓 Index Link 🏓", siurl)
                         if VIEW_LINK:
-                            buttons.buildbutton("🛸 ViewLink 🛸", siurls)
+                            buttons.buildbutton("🍿 Stream In Browser 🍿", siurls)
                     else:
-                        buttons.buildbutton("🏓 IndexLink 🏓", url)
+                        buttons.buildbutton("🏓 Index Link 🏓", url)
                         if VIEW_LINK:
-                            buttons.buildbutton("🛸 ViewLink 🛸", urls)
+                            buttons.buildbutton("🍿 Stream In Browser 🍿", urls)
                 if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
                     buttons.buildbutton(f"{BUTTON_FOUR_NAME}", f"{BUTTON_FOUR_URL}")
                 if BUTTON_FIVE_NAME is not None and BUTTON_FIVE_URL is not None:
@@ -556,9 +556,9 @@ class GoogleDriveHelper:
                     msg += f"📁 <code>{file.get('name')}<br>(folder)🗂️</code><br>"
                     if SHORTENER is not None and SHORTENER_API is not None:
                         sfurl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={furl}&format=text').text
-                        msg += f"<b><a href={sfurl}>🔰 Drive Link</a></b>"
+                        msg += f"<b><a href={sfurl}>🔰 G-DriveLink</a></b>"
                     else:
-                        msg += f"<b><a href={furl}>🔰 Drive Link</a></b>"
+                        msg += f"<b><a href={furl}>🔰 G-DriveLink</a></b>"
                     if INDEX_URL is not None:
                         url_path = requests.utils.quote(f'{file.get("name")}')
                         url = f'{INDEX_URL}/{url_path}/'
@@ -576,9 +576,9 @@ class GoogleDriveHelper:
                     msg += f"📽 <code>{file.get('name')}<br>({get_readable_file_size(int(file.get('size')))})🎟️</code><br>"
                     if SHORTENER is not None and SHORTENER_API is not None:
                         sfurl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={furl}&format=text').text
-                        msg += f"<b><a href={sfurl}>🔰 Drive Link</a></b>"
+                        msg += f"<b><a href={sfurl}>🔰 G-DriveLink</a></b>"
                     else:
-                        msg += f"<b><a href={furl}>🔰 Drive Link</a></b>"
+                        msg += f"<b><a href={furl}>🔰 G-DriveLink</a></b>"
                     if INDEX_URL is not None:
                         url_path = requests.utils.quote(f'{file.get("name")}')
                         url = f'{INDEX_URL}/{url_path}'
@@ -588,11 +588,11 @@ class GoogleDriveHelper:
                             siurls = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={urls}&format=text').text
                             msg += f' <b>| <a href="{siurl}">🏓 Index Link</a></b>'
                             if VIEW_LINK:
-                                msg += f' <b>| <a href="{siurls}">🛸 View Link</a></b>'
+                                msg += f' <b>| <a href="{siurls}">🛸 Stream In Browser</a></b>'
                         else:
                             msg += f' <b>| <a href="{url}">🏓 Index Link</a></b>'
                             if VIEW_LINK:
-                                msg += f' <b>| <a href="{urls}">🛸 View Link</a></b>'
+                                msg += f' <b>| <a href="{urls}">🛸 Stream In Browser</a></b>'
                 msg += '<br><br>'
                 content_count += 1
                 if content_count == TELEGRAPHLIMIT :
