@@ -68,6 +68,7 @@ def delete_all_messages():
 
 def update_all_messages():
     total, used, free = shutil.disk_usage('.')
+    used = get_readable_file_size(used)
     free = get_readable_file_size(free)
     currentTime = get_readable_time(time.time() - botStartTime)
     msg = get_readable_message()
@@ -106,6 +107,7 @@ def update_all_messages():
 
 def sendStatusMessage(msg, bot):
     total, used, free = shutil.disk_usage('.')
+    used = get_readable_file_size(used)
     free = get_readable_file_size(free)
     currentTime = get_readable_time(time.time() - botStartTime)
     progress = get_readable_message()
