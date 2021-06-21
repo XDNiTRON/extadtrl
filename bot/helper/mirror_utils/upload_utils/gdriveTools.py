@@ -647,7 +647,7 @@ class GoogleDriveHelper:
                 msg += f'\n\n<b>🧰TotalSize: </b><code>{get_readable_file_size(self.total_bytes)}</code>'
                 msg += f'\n\n<b>╭━➤Type: </b><code>Folder</code>'
                 msg += f'\n<b>├━•SubFolders: </b><code>{self.total_folders}</code>'
-                msg += f'\n<b>╰─•Files: </b><code>{self.total_files}</code>'
+                msg += f'\n<b>╰━•Files: </b><code>{self.total_files}</code>'
             else:
                 msg += f'<b>📂FileName: </b><code>{name}</code>'
                 try:
