@@ -40,7 +40,7 @@ def stats(update, context):
             f'<b>├⏱BotUptime:</b> {currentTime}\n' \
             f'<b>╰⏰StartTime:</b> {current}\n\n' \
             f'<b>╭━─━─━┫🛸 DISK USGE 🛸┃</b>\n' \
-            f'<b>├━🧰Total Disk Space:</b> {total}\n' \
+            f'<b>├━🧰TotalDiskSpace:</b> {total}\n' \
             f'<b>├━📮Used:</b> {used}\n' \
             f'<b>╰━🏮Free:</b> {free}\n\n' \
             f'<b>╭━─━┫🕹 DATA USAGE 🕹┃</b>\n<b>├━🔺Upload:</b> {sent}\n' \
@@ -49,7 +49,7 @@ def stats(update, context):
             f'<b>├━💾RAM:</b> {memory}%\n' \
             f'<b>├━💿DISK:</b> {disk}%\n' \
             f'<b>│</b>\n' \
-            f'<b>╰━┫🏆@ANonYmoUS_FriEND🏆┃</b>'
+            f'<b>╰━┫ @ANonYmoUS_FriEND ┃</b>'
     update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
 
 
