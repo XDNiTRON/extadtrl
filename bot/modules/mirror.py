@@ -152,7 +152,7 @@ class MirrorListener(listeners.MirrorListeners):
             if os.path.isdir(f'{DOWNLOAD_DIR}/{self.uid}/{download_dict[self.uid].name()}'):
                 msg += '\n\n<b>╭• Type : </b><code>Folder</code>'
                 msg += f'\n<b>├• SubFolders : </b><code>{folders}</code>'
-                msg += f'\n<b>╰• File s : </b><code>{files}</code>'
+                msg += f'\n<b>╰• Files : </b><code>{files}</code>'
             else:
                 msg += f'\n\n<b>➤ Type: </b><code>{typ}</code>'
             buttons = button_build.ButtonMaker()
