@@ -36,13 +36,13 @@ def cancel_mirror(update, context):
             pass
             
     try:
-        if dl.status() == "UpLoading.....📤":
+        if dl.status() == "UpLoading......📤":
             sendMessage("Upload in progress, can't cancel 🤫", context.bot, update)
             return
-        elif dl.status() == "Archiving.....🔐":
+        elif dl.status() == "Archiving......🔐":
             sendMessage("Archival in progress, can't cancel 🤫", context.bot, update)
             return
-        elif dl.status() == "Extracting.....🗳":
+        elif dl.status() == "Extracting......🗳":
             sendMessage("Extract in progress, can't cancel 🤫", context.bot, update)
             return
         else:
