@@ -588,11 +588,11 @@ class GoogleDriveHelper:
                             siurls = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={urls}&format=text').text
                             msg += f' <b>| <a href="{siurl}">🏓 Index Link</a></b>'
                             if VIEW_LINK:
-                                msg += f' <b>| <a href="{siurls}">🛸 Stream In Browser</a></b>'
+                                msg += f' <b>| <a href="{siurls}">🍿 Stream In Browser</a></b>'
                         else:
                             msg += f' <b>| <a href="{url}">🏓 Index Link</a></b>'
                             if VIEW_LINK:
-                                msg += f' <b>| <a href="{urls}">🛸 Stream In Browser</a></b>'
+                                msg += f' <b>| <a href="{urls}">🍿 Stream In Browser</a></b>'
                 msg += '<br><br>'
                 content_count += 1
                 if content_count == TELEGRAPHLIMIT :
