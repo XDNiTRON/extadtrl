@@ -50,7 +50,7 @@ def cloneNode(update, context):
                         return
                     else:
                         deleteMessage(context.bot, msg1)                
-        msg = sendMessage(f"🌈 CLONING 🌈 <code>{link}</code>", context.bot, update)
+        msg = sendMessage(f"🌈 COPYING 🌈 <code>{link}</code>", context.bot, update)
         result, button = gd.clone(link)
         deleteMessage(context.bot, msg)
         if button == "":
